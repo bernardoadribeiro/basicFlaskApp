@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="layout">
+        <div class="imgBox">
+            <img class="logo" src={{ url_for('static', filename='/images/flask-logo.png') }} alt="Flask logo" />
+        </div>
+        <br>
+        <p class="startCoding">
+            Your setup is ready to start coding! <br>
+            Your web application using flask is Running!
+        </p>
+    </div>
+{% endblock %}
