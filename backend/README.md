@@ -11,6 +11,11 @@ In this case we are organizing our app modules in python files instead folders.
 **Models**: Here are all the models of our database
 **Templates**: Here are the basic frontend of our Flask app
 
+## How to run the Flask application
+> Run the following commands in the root directory.
+Commands:
+- 
+
 ## Virtual Env
 > Run the following commands in the root directory.
 Commands:
