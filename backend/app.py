@@ -3,8 +3,9 @@ from decouple import config
 
 app = Flask(__name__)
 
-#  used to encrypt and secure your cookies and section data related to web app
-app.config['SECRET_KEY'] = config('SECRET_KEY')
+# #  set the patch to templates and static
+# app.template_folder = './backend/templates/'
+# app.static_folder = './backend/static/'
 
 
 @app.route('/', methods=['GET'])
@@ -15,7 +16,7 @@ def hello():
 if __name__ == '__main__':
     app.run(
         host='localhost',
-        port=8000,
+        port=config('FLASK_RUN_PORT'),
         use_reloader=True,
-        debug=True,
+        debug=config('FLASK_DEBUG'),
     )

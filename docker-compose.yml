@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: flaskapp_web
+    build:
+      context: ./backend
+      dockerfile: ../Dockerfile
+    ports:
+      - "${FLASK_RUN_PORT}:8000"
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - flask_app
+
+networks:
+  flask_app:
+    driver: bridge
