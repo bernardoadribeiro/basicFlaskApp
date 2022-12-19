@@ -31,9 +31,10 @@ This is a basic and containerized Flask application to help start coding using F
 **Migrations**
 > - Run the following lines when needs to manage migrations:
 > - Usage: `flask db [OPTIONS] COMMAND [ARGS]...`
-- `docker exec -it web flask db init`, to create a folder with set to migration;
-- `docker exec -it web flask db migrate -m "Initial migration."`, to generate a migration;
-- `docker exec -it web flask db [upgrade|downgrade]`, to up/down changes based on migration files.
+- `flask db init`: to create a folder with set to migration.
+- `flask db migrate -m "Initial migration."`: to generate a migration.
+- `flask db [upgrade|downgrade]`: to up/down changes based on migration files.
+- `flask db --help`: Show database help message.
 
 
 

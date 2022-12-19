@@ -8,6 +8,7 @@ from .routes import user
 
 
 app = Flask(__name__)
+app.app_context().push()
 
 # #  set the patch to templates and static
 # app.template_folder = './backend/templates/'
@@ -19,6 +20,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = config('SQLALCHEMY_DATABASE_URI',)
 app.config['SQLALCHEMY_ECHO'] = config('SQLALCHEMY_ECHO')
 
 db = SQLAlchemy(app)
+db.init_app(app)
 migrate = Migrate(app, db, directory='./backend/migrations')
 
 
@@ -36,3 +38,6 @@ if __name__ == '__main__':
     )
 
 app.register_blueprint(user.user, url_prefix='/')
+
+# Import database models from models
+from .models import User
