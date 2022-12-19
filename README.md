@@ -1,8 +1,8 @@
 # Basic Flask Application
 This is a basic and containerized Flask application to help start coding using Flask in the backend.
 
-> `__init__.py` files means that the directory is a package
-> `.flaskenv` file indicate the path of app.py to start the app
+> -  `__init__.py` files means that the directory is a package
+> -  `.flaskenv` file indicate the path of app.py to start the app
 
 ## Application Setup
 > **Required:** `docker` and `docker-compose` must be installed in your machine. 
@@ -27,6 +27,15 @@ This is a basic and containerized Flask application to help start coding using F
 - Create .env file base on `.env.dist`: `cp .env.dist .env`
 - Start containers: `docker-compose up` (use `-d` aferter up to start the container in the background)
 - Stop containers: `docker-compose down`
+
+**Migrations**
+> - Run the following lines when needs to manage migrations:
+> - Usage: `flask db [OPTIONS] COMMAND [ARGS]...`
+- `docker exec -it web flask db init`, to create a folder with set to migration;
+- `docker exec -it web flask db migrate -m "Initial migration."`, to generate a migration;
+- `docker exec -it web flask db [upgrade|downgrade]`, to up/down changes based on migration files.
+
+
 
 **URLs**
 - Flask App: http://localhost:8000/

@@ -1,6 +1,18 @@
 version: '3.8'
 
 services:
+  db:
+    container_name: flaskapp_db
+    image: postgres:10-alpine
+    env_file: .env
+    ports:
+      - 5432:5432
+    volumes:
+    - ./.data/postgres:/var/lib/postgresql/data
+    - /tmp:/tmp
+    networks:
+      - flask_app
+
   web:
     container_name: flaskapp_web
     build:
@@ -10,8 +22,20 @@ services:
       - "${FLASK_RUN_PORT}:8000"
     volumes:
       - .:/usr/src/app
+    depends_on:
+      - db
     networks:
       - flask_app
+
+  adminer:
+    container_name: flaskapp_adminer
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - flask_app
+    depends_on:
+      - db
 
 networks:
   flask_app:
