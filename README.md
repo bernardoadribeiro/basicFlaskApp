@@ -1,9 +1,6 @@
 # Basic Flask Application
 This is a basic and containerized Flask application to help start coding using Flask in the backend.
 
-> -  `__init__.py` files means that the directory is a package
-> -  `.flaskenv` file indicate the path of app.py to start the app
-
 ## Application Setup
 > **Required:** `docker` and `docker-compose` must be installed in your machine. 
 
@@ -37,6 +34,10 @@ This is a basic and containerized Flask application to help start coding using F
 - `flask db [upgrade|downgrade]`: to up/down changes based on migration files.
 - `flask db --help`: Show database help message.
 
+**Tips**
+-  `__init__.py` files means that the directory is a package
+- In `.env`:
+    - 
 
 
 ### **URLs**
