@@ -14,7 +14,8 @@ This is a basic and containerized Flask application to help start coding using F
 
 ### Images
 - [postgres:10-alpine](https://hub.docker.com/_/postgres)
-- [python:3.11-slim-buster]()
+- [python:3.11-slim-buster](https://hub.docker.com/_/python)
+- [adminer](https://hub.docker.com/_/adminer)
 
 ### Containers
 - `web`: backend module running the flask application.
@@ -38,8 +39,9 @@ This is a basic and containerized Flask application to help start coding using F
 
 
 
-**URLs**
+### **URLs**
 - Flask App: http://localhost:8000/
+- Adminer: http://localhost:8080/
 
 ### Resources
 - [Flask doc](https://flask.palletsprojects.com/en/2.2.x/)

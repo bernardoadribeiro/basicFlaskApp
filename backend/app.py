@@ -24,11 +24,13 @@ db.init_app(app)
 migrate = Migrate(app, db, directory='./backend/migrations')
 
 
+# Index route
 @app.route('/', methods=['GET'])
 def hello():
     return render_template('index.html')
 
 
+# Start app
 if __name__ == '__main__':
     app.run(
         host='localhost',
@@ -37,7 +39,9 @@ if __name__ == '__main__':
         debug=config('FLASK_DEBUG'),
     )
 
+# Register routes
 app.register_blueprint(user.user, url_prefix='/')
+
 
 # Import database models from models
 from .models import User

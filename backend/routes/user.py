@@ -8,4 +8,5 @@ user = Blueprint(
 
 @user.route('/user')
 def index():
+    """Returns 'user' index page"""
     return render_template('./user/index.html')
