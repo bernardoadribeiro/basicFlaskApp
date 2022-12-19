@@ -37,7 +37,8 @@ This is a basic and containerized Flask application to help start coding using F
 **Tips**
 -  `__init__.py` files means that the directory is a package
 - In `.env`:
-    - 
+    - `SECRET_KEY`: This is a secret key to secure your session data and cookies of your application
+    - `FLASK_DEBUG`: It must be `False` when you deploy your application to `Production`
 
 
 ### **URLs**
