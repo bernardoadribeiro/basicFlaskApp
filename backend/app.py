@@ -9,6 +9,7 @@ from .routes import user
 
 app = Flask(__name__)
 app.app_context().push()
+app.secret_key = config('SECRET_KEY')
 
 # #  set the patch to templates and static
 # app.template_folder = './backend/templates/'
@@ -19,7 +20,7 @@ app.app_context().push()
 app.config['SQLALCHEMY_DATABASE_URI'] = config('SQLALCHEMY_DATABASE_URI',)
 app.config['SQLALCHEMY_ECHO'] = config('SQLALCHEMY_ECHO')
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 db.init_app(app)
 migrate = Migrate(app, db, directory='./backend/migrations')
 
