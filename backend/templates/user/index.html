@@ -1,6 +1,66 @@
 {% extends "base.html" %}
+{% block head %} <title>Users</title> {% endblock %}
 {% block content %}
-  <div class="layout">
+  <div class="">
     <p class="startCoding">You are in /user route</p>
+
+    <div class="row">
+
+      <div class="col-6">
+        <h3 align="center">Users</h3>
+        <table class="table table-striped">
+          <!-- header -->
+          <tr>
+            <th>ID</th>
+          </tr>
+
+          <!-- Rows -->
+          <tr>
+            <td>1</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-6 ">
+        
+        <form method="POST">
+          <h3 align="center">Register users</h3>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name"placeholder="Enter name"/>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username"placeholder="Enter username"/>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"/>
+          </div>
+
+          <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password2">Confirm password</label>
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password"
+            />
+          </div>
+
+          <br/>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </div>
+
+    </div>
+
   </div>
 {% endblock %}
